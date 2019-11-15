@@ -1,3 +1,4 @@
+## Prof.: usa nomi variabili più significativi
 x=10           #("COORDINATA X DEL CENTRO DEL CERCHIO(PALLINA)")
 y=20           #("COORDINATA Y DEL CENTRO DEL CERCHIO(PALLINA)")
 vx=1           #("DIREZIONE DELLA PALLINA(X)")
@@ -39,12 +40,17 @@ def draw():
     text(score1,10,height-(hr+20))       #("CREAZIONE DEL TESTO PER IL PUNTEGGIO")
     if x>=width or x<0:                  #("CAMBIO DIREZIONE QUANDO LA PALLINA COLPISCE IL SOFFITTO")
         vx*=-1
+## Prof.: Perché ridisegni la pallina???
         ellipse(x,y,c1,c2)
     if y>=height or y<=0:                #("CAMBIO DIREZIONE QUANDO LA PALLINA COLPISCE IL FONDO")
         vy*=-1
+## Prof.: Perché ridisegni la pallina???
+
         ellipse(x,y,c1,c2)
+## Prof.: meglio usare >= se lo spostamento della pallina non è 1
     if y==height:
         score2+=1
+## Prof.: meglio usare <= se lo spostamento della pallina non è 1
     if y==0:
         score1+=1
     if x>=xr and x<=xr+lar and yc==yr or xc2>=xr2+lar and xc2<=xr2-hr+lar:
@@ -65,6 +71,7 @@ def keyPressed():
         xr2-=15
     if key=='d' and xr2<width-lar:
         xr2+=15
+## Prof.: se si preme y o n il gioco si ferma
     if key=='y':
         noLoop()
     if key=='n':
